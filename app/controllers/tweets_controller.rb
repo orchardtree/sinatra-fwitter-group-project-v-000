@@ -51,7 +51,7 @@ class TweetsController < ApplicationController
   patch '/tweets' do
     if !params[:content].empty?
       user = Helpers.current_user(session)
-      @tweet = Tweet.new(content: params[:content], user_id: user.id)
+      @tweet = Tweet.update(content: params[:content])
       @tweet.save
       redirect to "tweets/#{@tweet.id}"
     end
