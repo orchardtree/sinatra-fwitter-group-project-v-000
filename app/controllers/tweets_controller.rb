@@ -48,7 +48,7 @@ class TweetsController < ApplicationController
     end
   end
 
-  patch '/tweet/:id' do
+  patch '/tweets' do
     if !params[:content].empty?
       user = Helpers.current_user(session)
       @tweet = Tweet.new(content: params[:content], user_id: user.id)
