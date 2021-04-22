@@ -19,7 +19,7 @@ class TweetsController < ApplicationController
     end
   end
 
-  post '/tweets' do
+  post '/tweets/new' do
     if !params[:content].empty?
       user = Helpers.current_user(session)
       @tweet = Tweet.new(content: params[:content], user_id: user.id)
