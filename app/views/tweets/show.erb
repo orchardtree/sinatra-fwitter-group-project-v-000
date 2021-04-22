@@ -1,5 +1,5 @@
 <h1><%= @user.username %> Just Tweeted...</h1>
-<p><a href="/tweets/edit">Edit Tweet</a> | <a href="tweets/new">New Tweet</a> | <a href="/users/<%= @user.slug %>">My Tweets</a> | <a href="/logout">Log Out</a></p>
+<p><a href="/tweets/<%= @tweet.id %>/edit">Edit Tweet</a> | <a href="tweets/new">New Tweet</a> | <a href="/users/<%= @user.slug %>">My Tweets</a> | <a href="/logout">Log Out</a></p>
 
 <p><%= @tweet.user.username %>: <%= @tweet.content %></p></br>
 <form action='/tweets/#{@tweet.id}' method="post">
