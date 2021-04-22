@@ -57,7 +57,7 @@ class TweetsController < ApplicationController
     end
   end
 
-  delete '/tweets' do
+  delete '/tweets/:id' do
     if Helpers.is_logged_in?(session)
       @user = Helpers.current_user(session)
       @tweet = Tweet.find_by(id: params[:id])
