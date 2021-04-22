@@ -42,7 +42,7 @@ class TweetsController < ApplicationController
     if Helpers.is_logged_in?(session)
       @user = Helpers.current_user(session)
       @tweet = Tweet.find_by(id: params[:id])
-      erb :'tweets/show'
+      erb :'tweets/edit'
     else
       redirect to 'login'
     end
