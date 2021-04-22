@@ -49,6 +49,7 @@ class TweetsController < ApplicationController
   end
 
   patch '/tweets' do
+    binding.pry
     if !params[:content].empty?
       user = Helpers.current_user(session)
       @tweet = Tweet.find_by(id: params[:id])
