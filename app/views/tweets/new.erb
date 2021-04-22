@@ -2,7 +2,7 @@
 <p><a href="/users/<%= @user.slug %>">My Tweets</a> | <a href="/logout">Log Out</a></p>
 <% if Helpers.is_logged_in?(session) %>
 <%= @error %>
-  <form action='/tweets' method="post">
+  <form action="/tweets" method="post">
     <label for="content">Create Your Tweet:</label>
     <input type="text" id="content" name="content"></br>
     </br>
