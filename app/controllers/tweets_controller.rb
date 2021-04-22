@@ -53,7 +53,7 @@ class TweetsController < ApplicationController
       user = Helpers.current_user(session)
       @tweet = Tweet.find_by(id: params[:id])
       @tweet.update(content: params[:content])
-      redirect to "tweets/#{@tweet.id}"
+      redirect to "tweets/#{@tweet.id}/edit"
     end
   end
 
