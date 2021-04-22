@@ -48,7 +48,7 @@ class TweetsController < ApplicationController
     end
   end
 
-  patch '/tweets' do
+  patch '/tweets/:id' do
     binding.pry
     if !params[:content].empty?
       user = Helpers.current_user(session)
