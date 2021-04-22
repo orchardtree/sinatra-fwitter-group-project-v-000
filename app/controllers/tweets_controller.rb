@@ -49,7 +49,7 @@ class TweetsController < ApplicationController
   end
 
   patch '/tweets/:id' do
-    if Helpers.is_logged_in?(session)
+    if !params[:content].empty? || Helpers.is_logged_in?(session)
       user = Helpers.current_user(session)
       @tweet = Tweet.find_by(id: params[:id])
       @tweet.update(content: params[:content])
