@@ -62,7 +62,7 @@ class TweetsController < ApplicationController
       @user = Helpers.current_user(session)
       @tweet = Tweet.find_by(id: params[:id])
       @tweet.delete
-      erb :'tweets'
+      redirect "users/show"
     else
       redirect to 'login'
     end
