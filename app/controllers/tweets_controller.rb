@@ -49,12 +49,10 @@ class TweetsController < ApplicationController
   end
 
   patch '/tweets/:id' do
-    binding.pry
     if !params[:content].empty?
       user = Helpers.current_user(session)
       @tweet = Tweet.find_by(id: params[:id])
       @tweet.update(content: params[:content])
-      #@tweet.save
       redirect to "tweets/#{@tweet.id}"
     end
   end
