@@ -1,6 +1,7 @@
-<h1><%= current_user.username %></h1>
-<% current_user.tweets.each do |tweet| %>
+<h1><%= @user.username %></h1>
+<p><a href="/tweets/new">New Tweet</a> | <a href="/tweets">All Tweets</a> | <a href="/logout">Log Out</a></p>
+<% @tweets.each do |tweet| %>
   <ul>
-    <li><%= tweet.content %></li>
+    <li><%= tweet.content %> <a href="/<%= #{tweet.id} %>">(edit)</a></li>
   </ul>
 <% end %>

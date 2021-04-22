@@ -1,5 +1,5 @@
 <h1>Welcome, <%= @user.username %></h1>
-<p><a href="/new">New Tweet</a> | <a href="/users/<%= @user.slug %>">My Tweets</a> | <a href="/logout">Log Out</a></p>
+<p><a href="/tweets/new">New Tweet</a> | <a href="/users/<%= @user.slug %>">My Tweets</a> | <a href="/logout">Log Out</a></p>
 <% @tweets.each do |tweet| %>
   <ul>
     <li><%= tweet.user.username %>: <%= tweet.content %></li>

@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   get '/signup' do
-    if logged_in?
+    if Helpers.is_logged_in?(session)
       redirect to 'tweets'
     else
       erb :'users/signup'
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   end
 
   get '/login' do
-    if logged_in?
+    if Helpers.is_logged_in?(session)
       redirect to 'tweets'
     else
       erb :'users/login'
@@ -45,6 +45,8 @@ class UsersController < ApplicationController
   end
 
   get '/users/:slug' do
+    @user = Helpers.current_user(session)
+    @tweets = @user.tweets.all
     erb :'users/show'
   end
 end
